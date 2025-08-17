@@ -18,19 +18,19 @@ You can also use it as a command reference.
 
 A view to display the operation panel and command list.
 
-![EXPLORER](https://github.com/Knworks/commandrepository/raw/HEAD/commandrepository/images/explorer.png)
+![EXPLORER](https://github.com/Knworks/commandrepository/raw/HEAD/images/explorer.png)
 
 ### DETAIL View
 
 A view to display the details of a command.
 
-![DETAIL](https://github.com/Knworks/commandrepository/raw/HEAD/commandrepository/images/detail.png)
+![DETAIL](https://github.com/Knworks/commandrepository/raw/HEAD/images/detail.png)
 
 ### EXECUTOR VIew
 
 A view to edit and execute commands.
 
-![EXECUTOR](https://github.com/Knworks/commandrepository/raw/HEAD/commandrepository/images/executor.png)
+![EXECUTOR](https://github.com/Knworks/commandrepository/raw/HEAD/images/executor.png)
 
 ## Usage
 
