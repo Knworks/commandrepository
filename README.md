@@ -26,7 +26,7 @@ A view to display the details of a command.
 
 ![DETAIL](https://github.com/Knworks/commandrepository/raw/HEAD/images/detail.png)
 
-### EXECUTOR VIew
+### EXECUTOR View
 
 A view to edit and execute commands.
 
