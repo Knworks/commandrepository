@@ -11,6 +11,7 @@ You can also use it as a command reference.
 - Send commands to the terminal instantly.
 - Automatically reflects the command in the executor view when selected.
 - Edit commands in the executor view, or enter and execute any command (send with Ctrl+Enter).
+- Filter commands by label via a search input (persisted per workspace).
 
 ## Views
 
@@ -57,6 +58,15 @@ A view to edit and execute commands.
 1. Select the category/command node you want to edit or delete in the Explorer.
 2. Click the "Edit" or "Delete" button in the Explorer's operation panel.
 3. When editing, overwrite the registration information with the same items as when registering. When deleting, allow the deletion in the confirmation dialog.
+
+### Filtering
+
+1. Click the search icon in the Explorer title bar to open an input box.
+2. Enter text to filter by label (case-insensitive).
+   - Use `|` to OR terms.
+   - If a category label matches, the category and all of its commands are shown.
+   - If a command label matches, only the matched command is shown under its parent category.
+3. Use the Clear Filter button (shown while filtering) to remove the filter. The filter text is remembered per workspace.
 
 ## Settings
 
