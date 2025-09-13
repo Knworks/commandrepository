@@ -12,6 +12,7 @@ You can also use it as a command reference.
 - Automatically reflects the command in the executor view when selected.
 - Edit commands in the executor view, or enter and execute any command (send with Ctrl+Enter).
 - Filter commands by label via a search input (persisted per workspace).
+- Move selected category/command up or down from the Explorer title bar.
 
 ## Views
 
@@ -67,6 +68,15 @@ A view to edit and execute commands.
    - If a category label matches, the category and all of its commands are shown.
    - If a command label matches, only the matched command is shown under its parent category.
 3. Use the Clear Filter button (shown while filtering) to remove the filter. The filter text is remembered per workspace.
+
+### Move Up/Down
+
+1. Select a category or a command in the Explorer.
+2. Click the Up/Down buttons in the Explorer title bar to move the item within its list.
+   - Categories move within the root list.
+   - Commands move within their parent category.
+3. The order is saved to `commandrepository.json`.
+4. If nothing is selected, a standard message box will prompt you to select an item.
 
 ## Settings
 
