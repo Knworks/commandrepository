@@ -13,6 +13,7 @@ You can also use it as a command reference.
 - Edit commands in the executor view, or enter and execute any command (send with Ctrl+Enter).
 - Filter commands by label via a search input (persisted per workspace).
 - Move selected category/command up or down from the Explorer title bar.
+- Persist expanded/collapsed category state per workspace.
 
 ## Views
 
@@ -77,6 +78,10 @@ A view to edit and execute commands.
    - Commands move within their parent category.
 3. The order is saved to `commandrepository.json`.
 4. If nothing is selected, a standard message box will prompt you to select an item.
+
+### Category Expansion State
+
+- Expanded/collapsed categories are remembered per workspace.
 
 ## Settings
 
