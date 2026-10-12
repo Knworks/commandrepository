@@ -1,0 +1,218 @@
+{
+  "name": "commandrepository",
+  "displayName": "Command Repository",
+  "publisher": "Knworks",
+  "description": "This is a VS Code extension that allows you to register frequently used commands by category and send them to the terminal with one click.",
+  "repository": "https://github.com/Knworks/commandrepository",
+  "version": "1.0.6",
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "engines": {
+    "vscode": "^1.102.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "commandrepository-sidebar",
+          "title": "Command Repository",
+          "icon": "images/sidebar.png"
+        }
+      ]
+    },
+    "views": {
+      "commandrepository-sidebar": [
+        {
+          "id": "commandRepositoryExplorer",
+          "name": "Explorer",
+          "type": "tree",
+          "icon": "images/icon.png"
+        },
+        {
+          "id": "commandRepositoryDetails",
+          "name": "Details",
+          "type": "webview",
+          "icon": "images/icon.png"
+        },
+        {
+          "id": "commandExecutor",
+          "name": "Executor",
+          "type": "webview",
+          "icon": "images/icon.png"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "commandRepository.filter",
+        "title": "Filter",
+        "icon": "$(search)"
+      },
+      {
+        "command": "commandRepository.clearFilter",
+        "title": "Clear Filter",
+        "icon": "$(clear-all)"
+      },
+      {
+        "command": "commandRepository.addCategory",
+        "title": "Add Category",
+        "icon": "$(new-folder)"
+      },
+      {
+        "command": "commandRepository.addCommand",
+        "title": "Add a command",
+        "icon": "$(new-file)"
+      },
+      {
+        "command": "commandRepository.deleteItem",
+        "title": "Delete",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "commandRepository.openStorageDirectory",
+        "title": "Open the storage folder",
+        "icon": "$(folder)"
+      },
+      {
+        "command": "commandRepository.refresh",
+        "title": "Refresh",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "commandRepository.moveUp",
+        "title": "Move Up",
+        "icon": "$(arrow-up)"
+      },
+      {
+        "command": "commandRepository.moveDown",
+        "title": "Move Down",
+        "icon": "$(arrow-down)"
+      },
+      {
+        "command": "commandRepository.executeCommand",
+        "title": "Execute command",
+        "icon": {
+          "light": "images/execute16.png",
+          "dark": "images/execute16.png"
+        }
+      },
+      {
+        "command": "commandRepository.editItem",
+        "title": "Edit",
+        "icon": "$(edit)"
+      },
+      {
+        "command": "commandRepository.executeFromInput",
+        "title": "Execute from Input"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "commandRepository.filter",
+          "when": "view == commandRepositoryExplorer",
+          "group": "navigation@0",
+          "toggled": "commandRepository:filterActive"
+        },
+        {
+          "command": "commandRepository.clearFilter",
+          "when": "view == commandRepositoryExplorer && commandRepository:filterActive",
+          "group": "navigation@0.1"
+        },
+        {
+          "command": "commandRepository.addCategory",
+          "when": "view == commandRepositoryExplorer",
+          "group": "navigation@1"
+        },
+        {
+          "command": "commandRepository.addCommand",
+          "when": "view == commandRepositoryExplorer",
+          "group": "navigation@2"
+        },
+        {
+          "command": "commandRepository.editItem",
+          "when": "view == commandRepositoryExplorer",
+          "group": "navigation@3"
+        },
+        {
+          "command": "commandRepository.moveUp",
+          "when": "view == commandRepositoryExplorer",
+          "group": "navigation@4.1"
+        },
+        {
+          "command": "commandRepository.moveDown",
+          "when": "view == commandRepositoryExplorer",
+          "group": "navigation@4.2"
+        },
+        {
+          "command": "commandRepository.deleteItem",
+          "when": "view == commandRepositoryExplorer",
+          "group": "navigation@4"
+        },
+        {
+          "command": "commandRepository.openStorageDirectory",
+          "when": "view == commandRepositoryExplorer",
+          "group": "navigation@4.5"
+        },
+        {
+          "command": "commandRepository.refresh",
+          "when": "view == commandRepositoryExplorer",
+          "group": "navigation@5"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "commandRepository.executeCommand",
+          "when": "view == commandRepositoryExplorer && viewItem == 'commandNoParam'",
+          "group": "inline"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Command Repository",
+      "properties": {
+        "commandRepository.storagePath": {
+          "type": "string",
+          "default": "",
+          "description": "Specifies the storage directory for the command repository. You can also set it with a relative path from the workspace root, ${workspaceFolder}, or ${env:VARNAME}."
+        }
+      }
+    },
+    "jsonValidation": [
+      {
+        "fileMatch": "commandrepository.json",
+        "url": "./schemas/commandrepository.schema.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/uuid": "^10.0.0",
+    "@types/vscode": "^1.102.0",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.25.1",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@vscode/codicons": "^0.0.39",
+    "uuid": "^11.1.0",
+    "vscode-nls": "^5.2.0"
+  }
+}
