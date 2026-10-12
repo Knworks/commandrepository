@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Command Repository",
+  "description": "Data for the Command Repository extension.",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "number",
+      "description": "Schema version."
+    },
+    "categories": {
+      "type": "array",
+      "description": "List of command categories.",
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "children"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the category."
+          },
+          "label": {
+            "type": "string",
+            "description": "Display name for the category."
+          },
+          "children": {
+            "type": "array",
+            "description": "List of commands in this category.",
+            "items": {
+              "type": "object",
+              "required": ["id", "label", "command"],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Unique identifier for the command."
+                },
+                "label": {
+                  "type": "string",
+                  "description": "Display name for the command."
+                },
+                "command": {
+                  "type": "string",
+                  "description": "The actual command to execute."
+                },
+                "parameter": {
+                  "type": "string",
+                  "description": "Optional parameter expression, e.g., npm install <package>."
+                },
+                "description": {
+                  "type": "string",
+                  "description": "Optional description for the command."
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": ["version", "categories"]
+}

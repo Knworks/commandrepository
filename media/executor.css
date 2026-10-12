@@ -1,0 +1,33 @@
+/* media/executor.css */
+
+#command-input {
+    width: 100%;
+    height: 150px; /* 高さを調整 */
+    box-sizing: border-box; /* paddingとborderをwidth/heightに含める */
+    
+    /* VS Codeテーマ変数を使用してスタイルを適用 */
+    font-family: var(--vscode-editor-font-family);
+    color: var(--vscode-input-foreground);
+    background-color: var(--vscode-input-background);
+    border: 1px solid var(--vscode-input-border);
+    border-radius: var(--vscode-input-border-radius, 2px);
+}
+
+#command-input:focus {
+    outline: 1px solid var(--vscode-focus-border);
+    border-color: var(--vscode-focus-border);
+}
+
+body {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.button-row {
+    align-self: flex-end;
+    display: flex;
+    gap: 8px;
+}
+

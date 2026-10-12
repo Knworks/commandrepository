@@ -1,0 +1,10 @@
+.serena/
+.vscode-test/
+tmp-tests/
+node_modules/
+dist/
+coverage/
+out/
+.DS_Store
+docs/
+vsix/

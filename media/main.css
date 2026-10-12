@@ -1,0 +1,68 @@
+/* media/main.css */
+body {
+    font-family: var(--vscode-font-family);
+    color: var(--vscode-editor-foreground);
+    background-color: var(--vscode-side-bar-background);
+    padding: 10px;
+}
+
+#view-container {
+    margin-bottom: 15px;
+}
+
+.view p {
+    margin: 5px 0;
+}
+
+.view p strong {
+    color: var(--vscode-text-link-foreground);
+}
+
+.form-element {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#button-bar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#button-bar vscode-button span[slot="start"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#button-bar vscode-button span[slot="start"] img {
+    width: 24px;
+    height: 24px;
+}
+
+.type-badge {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: var(--vscode-button-foreground);
+    background-color: var(--vscode-button-background);
+    margin-bottom: 10px;
+}
+
+#command-container-ro, #parameter-container-ro, #description-container-ro {
+    word-wrap: break-word;
+}
+
+code {
+    font-family: var(--vscode-editor-font-family);
+    background-color: var(--vscode-text-code-block-background);
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+/* 詳細エリアの高さ調整 */
+#read-only-view {
+    min-height: 40px;
+}
